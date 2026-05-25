@@ -1,0 +1,86 @@
+.fakeui-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2147483647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.fakeui-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  border: 8px solid transparent;
+}
+
+.fakeui-modal.phishing {
+  border-color: #ef4444;
+}
+
+.fakeui-modal.warning {
+  border-color: #f59e0b;
+}
+
+.fakeui-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.fakeui-evidence {
+  text-align: left;
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.fakeui-evidence-item {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.fakeui-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.fakeui-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fakeui-btn-primary {
+  background: #ef4444;
+  color: white;
+}
+
+.fakeui-btn-primary:hover {
+  background: #dc2626;
+}
+
+.fakeui-btn-secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.fakeui-btn-secondary:hover {
+  background: #d1d5db;
+}

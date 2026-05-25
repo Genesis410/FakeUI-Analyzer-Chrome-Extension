@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header>
+      <img src="../../assets/icon48.png" alt="Logo" class="logo">
+      <h1>FakeUI Detector</h1>
+    </header>
+    
+    <div class="stats-card">
+      <div class="stat">
+        <span class="label">Threats Blocked</span>
+        <span class="value" id="blocked-count">0</span>
+      </div>
+      <div class="stat">
+        <span class="label">Protection</span>
+        <span class="value" id="protection-status">Active</span>
+      </div>
+    </div>
+
+    <div class="settings">
+      <h3>Settings</h3>
+      <div class="setting-item">
+        <label for="sensitivity">Sensitivity</label>
+        <input type="range" id="sensitivity" min="0" max="100" value="70">
+      </div>
+      <button id="update-hashes" class="btn">Update Hash Database</button>
+      <button id="clear-whitelist" class="btn btn-secondary">Clear Whitelist</button>
+    </div>
+
+    <footer>
+      <p>Security by OpenCode</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
