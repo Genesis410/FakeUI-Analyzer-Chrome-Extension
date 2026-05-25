@@ -77,7 +77,7 @@ To add a new legitimate site to the "Safe" list:
 
 ### Model Training
 The CNN is based on a quantized MobileNetV3-Small. For refinement:
--   Use the guidelines in `AI/MLRefinement.md`.
+-   Focus on using a Knowledge-Distilled Lightweight CNN approach for browser efficiency.
 -   Train using a mix of real-world phishing samples (PhishTank) and synthetic clones.
 
 ---
