@@ -1,0 +1,24 @@
+{
+  "legitimate_templates": {
+    "accounts.google.com": "google_raw_dom_structure_123",
+    "microsoft.com": "ms_raw_dom_structure_789",
+    "facebook.com": "fb_raw_dom_structure_000",
+    "appleid.apple.com": "apple_raw_dom_structure_111",
+    "paypal.com": "paypal_raw_dom_structure_222"
+  },
+  "scenarios": [
+    { "name": "Google - Perfect Match", "domain": "accounts.google.com", "protocol": "https:", "action": "https://accounts.google.com/submit", "dom": "google_raw_dom_structure_123", "visual": 0.1, "label": "SAFE" },
+    { "name": "Microsoft - Perfect Match", "domain": "microsoft.com", "protocol": "https:", "action": "https://microsoft.com/submit", "dom": "ms_raw_dom_structure_789", "visual": 0.1, "label": "SAFE" },
+    { "name": "Apple - Perfect Match", "domain": "appleid.apple.com", "protocol": "https:", "action": "https://appleid.apple.com/auth", "dom": "apple_raw_dom_structure_111", "visual": 0.1, "label": "SAFE" },
+    { "name": "PayPal - Perfect Match", "domain": "paypal.com", "protocol": "https:", "action": "https://paypal.com/login", "dom": "paypal_raw_dom_structure_222", "visual": 0.1, "label": "SAFE" },
+    { "name": "Random Blog - Unlisted Safe", "domain": "my-blog.com", "protocol": "https:", "action": "https://my-blog.com/login", "dom": "unknown_struct_1", "visual": 0.1, "label": "SAFE" },
+    { "name": "Google - Domain Mismatch (Classic)", "domain": "google-verify.net", "protocol": "https:", "action": "https://attacker.com/steal", "dom": "google_raw_dom_structure_123", "visual": 0.9, "label": "PHISHING" },
+    { "name": "Google - HTTP Downgrade", "domain": "accounts.google.com", "protocol": "http:", "action": "http://accounts.google.com/submit", "dom": "google_raw_dom_structure_123", "visual": 0.1, "label": "PHISHING" },
+    { "name": "FB - Visual Spoof (Correct Domain)", "domain": "facebook.com", "protocol": "https:", "action": "https://facebook.com/login", "dom": "fb_fake_struct_999", "visual": 0.9, "label": "PHISHING" },
+    { "name": "Apple - Sophisticated Structural Clone", "domain": "apple-id-secure.com", "protocol": "https:", "action": "https://apple-id-secure.com/auth", "dom": "apple_raw_dom_structure_111", "visual": 0.8, "label": "PHISHING" },
+    { "name": "PayPal - Action Hijack", "domain": "paypal.com", "protocol": "https:", "action": "https://attacker-paypal.com/steal", "dom": "paypal_raw_dom_structure_222", "visual": 0.2, "label": "PHISHING" },
+    { "name": "Generic - High Risk Keywords", "domain": "verify-now.com", "protocol": "https:", "action": "https://verify-now.com/submit", "dom": "generic_struct_1", "visual": 0.4, "label": "PHISHING", "keyword": "update your password immediately" },
+    { "name": "Banking - Subtle Visual Deviation", "domain": "secure-bank.com", "protocol": "https:", "action": "https://secure-bank.com/login", "dom": "bank_struct_1", "visual": 0.6, "label": "WARNING" },
+    { "name": "Corporate - Custom UI (Edge Case)", "domain": "corp-intranet.local", "protocol": "https:", "action": "https://corp-intranet.local/login", "dom": "corp_struct_1", "visual": 0.3, "label": "SAFE" }
+  ]
+}
