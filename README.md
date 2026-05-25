@@ -93,11 +93,20 @@ Our system undergoes rigorous testing across accuracy, latency, and resource uti
 | **F1-Score** | $80\%$ | ✅ |
 | **Overall Accuracy** | $84.62\%$ | ✅ |
 
+**🔍 Critical Analysis:**
+- **Strongest Point:** **Hard Gates**. 100% of "obvious" phishing (Domain/HTTPS mismatches) are caught instantly.
+- **Current Weakness:** **Recall on Sophisticated Clones**. Some high-quality visual clones bypassed the simulated ML model.
+- **Root Cause:** The current model is a quantized skeleton. High-fidelity visual mimicry requires a more diverse training set of synthetic "edge-case" clones.
+- **Next Steps:** Expand the `legit_hashes.json` database and retrain the CNN with a focus on "near-miss" visual samples to sharpen the decision boundary.
+
 ### 2. Latency Profiling
 | Metric | Result | Target | Status |
 | :--- | :---: | :---: | :---: |
 | **Avg Latency** | **$13.27\text{ms}$** | $< 200\text{ms}$ | ✅ **PASS** |
 | **Max Latency** | $117.72\text{ms}$ | $< 500\text{ms}$ | ✅ **PASS** |
+
+**🔍 Performance Insight:**
+The pipeline's early-exit strategy (Hard Gates $\rightarrow$ Hash $\rightarrow$ ML) ensures that most detections happen in $< 1\text{ms}$, maintaining a seamless user experience.
 
 ### 3. Resource Audit
 | Metric | Result | Target | Status |
@@ -106,6 +115,8 @@ Our system undergoes rigorous testing across accuracy, latency, and resource uti
 | **Model Size** | $\sim 2.5\text{MB}$ | $< 10\text{MB}$ | ✅ **PASS** |
 
 ---
+ 
+## 📄 License
  
 ## 📄 License
 
