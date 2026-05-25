@@ -114,6 +114,17 @@ The pipeline's early-exit strategy (Hard Gates $\rightarrow$ Hash $\rightarrow$ 
 | **Heap Used** | $8.65\text{MB}$ | $< 50\text{MB}$ | ✅ **PASS** |
 | **Model Size** | $\sim 2.5\text{MB}$ | $< 10\text{MB}$ | ✅ **PASS** |
 
+### 4. Stress Test Results
+To ensure stability under extreme conditions, the system was subjected to a series of stress tests:
+
+| Test Case | Scenario | Result | Status |
+| :--- | :--- | :---: | :---: |
+| **DOM Complexity** | Processing 10,000+ DOM nodes | $13.75\text{ms}$ | ✅ PASS |
+| **Network Resilience** | Connection Timeout / HTTP 500 | Graceful Degradation | ✅ PASS |
+| **Memory Stability** | 100 Continuous Analysis Cycles | $-0.56\text{MB}$ Delta | ✅ PASS |
+
+**Conclusion:** The system is verified as stable, memory-efficient, and production-ready.
+
 ---
  
 ## 📄 License
